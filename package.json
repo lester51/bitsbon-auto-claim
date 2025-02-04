@@ -3,8 +3,7 @@
   "version": "1.0.0",
   "main": "server.js",
   "scripts": {
-    "start": "node cluster.js",
-    "deploy": "npm install && node cluster.js"
+    "start": "node cluster.js"
   },
   "author": "HackMeSenpai",
   "license": "MIT",
