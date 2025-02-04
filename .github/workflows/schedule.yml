@@ -1,0 +1,13 @@
+name: Schedule Netlify Function
+
+on:
+  schedule:
+    - cron: '*/10 * * * *'  # This runs every 10 minutes
+
+jobs:
+  run-tasks:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Make HTTP Request
+        run: |
+          curl -X GET https://hms-bitsbon-auto-claim.netlify.app/.netlify/functions/runTasks
