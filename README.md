@@ -5,7 +5,7 @@ Script to automatically roll and claim coins every 10 minutes.
 ## Features
 
 - Non-Expiring Cookies
-- Login using `Email and Password` or `Access Token`
+- Login using `Email` and `Password`
 - Real-time balance monitoring
 - Express server for status monitoring
 - Auto restart if the server died/exited (uses cluster)
@@ -71,5 +71,3 @@ This project is licensed under the MIT License.
 ## Disclaimer
 
 This project is not affiliated with or endorsed by Bitsbon.com. Use at your own risk.
-# bitsbon-auto-claim
-# bitsbon-auto-claim
