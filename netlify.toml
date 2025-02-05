@@ -1,9 +1,0 @@
-[build]
-  publish = "."  # This serves files from the root directory
-  functions = "netlify/functions"  # This specifies where your functions are located
-
-[functions]
-  directory = "netlify/functions"  # This specifies where your functions are located
-
-  # Define the scheduled function here
-  runTasks = { schedule = "*/10 * * * *" }  # This cron expression runs the function every 10 minutes
