@@ -5,6 +5,5 @@
 [functions]
   directory = "netlify/functions"  # This specifies where your functions are located
 
-[[functions]]
-  name = "runTasks"
-  schedule = "*/10 * * * *"  # This cron expression runs the function every 10 minutes
+  # Define the scheduled function here
+  runTasks = { schedule = "*/10 * * * *" }  # This cron expression runs the function every 10 minutes
