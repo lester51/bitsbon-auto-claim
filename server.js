@@ -17,6 +17,8 @@ class Server {
             debug: 'blue',
             error: 'red'
         });
+        
+        run();
 
         const app = express();
 
@@ -26,7 +28,6 @@ class Server {
         
         app.listen(port, async() => {;
             console.log(colors.verbose.bold("[ SERVER ]")+colors.info(` Server port ${port} exposed!`));
-            run();
         });
     }
 }
