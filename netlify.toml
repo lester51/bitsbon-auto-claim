@@ -1,0 +1,3 @@
+[[functions]]
+  name = "runTasks"
+  schedule = "*/10 * * * *"  # This cron expression runs the function every 10 minutes
