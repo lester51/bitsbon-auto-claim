@@ -3,10 +3,10 @@ const {
     accinfo,
     login,
     spin
-} = require('./src/index');
+} = require('./index');
 const port = process.env.PORT || 3000;
 require('dotenv').config({
-    path: path.resolve(__dirname, './.env')
+    path: path.resolve(__dirname, '../.env')
 });
 const username = process.env.USERNAME;
 const password = process.env.PASSWORD;
