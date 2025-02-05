@@ -51,7 +51,7 @@ async function runEveryTenMinutes() {
     }
 }
 
-await function run() {
+async function run() {
     displayHeader();
     let cookies = await login(username, password);
     await accinfo(cookies);
