@@ -2,7 +2,7 @@ class Server {
     async startServer() {
         const colors = require('colors');
         const path = require('path'); 
-        const express = require('express');
+        //const express = require('express');
         const {
             displayHeader,
             accinfo,
@@ -14,7 +14,7 @@ class Server {
         });
         const username = process.env.USERNAME;
         const password = process.env.PASSWORD;
-        const port = process.env.PORT || 3000;
+        //const port = process.env.PORT || 3000;
         colors.setTheme({
             silly: 'rainbow',
             input: 'grey',
@@ -28,7 +28,7 @@ class Server {
             error: 'red'
         });
 
-        const app = express();
+        //const app = express();
         
         function delay(ms) {
             return new Promise(resolve => setTimeout(resolve, ms));
@@ -43,7 +43,7 @@ class Server {
                 await accinfo(cookies, true);
             }
             catch(e) {
-                console.log(colors.warn.bold("[ SCRIPT ] ")+colors.error(e.error))
+                console.log(colors.warn.bold("[ SCRIPT ] ")+colors.error(e.toString()))
                 console.log(colors.warn.bold("[ SCRIPT ] ")+colors.warn("Reconnecting..."))
                 await delay(60000);
                 await runTasks();
@@ -57,17 +57,17 @@ class Server {
             }
         }
 
-        app.get('/', (req, res) => {
+        /*app.get('/', (req, res) => {
             res.send('SERVER FOR BITBON FAUCET - AUTO FARM SCRIPT\nMADE\nBY\nHackMeSenpai(HMS)')
-        });
+        });*/
         
-        app.listen(port, async() => {
+        //app.listen(port, async() => {
             displayHeader();
-            console.log(colors.verbose.bold("[ SERVER ]")+colors.info(` Server port ${port} exposed!`));
+           // console.log(colors.verbose.bold("[ SERVER ]")+colors.info(` Server port ${port} exposed!`));
             let cookies = await login(username, password);
             await accinfo(cookies);
             runEveryTenMinutes();
-        });
+        //});
     }
 }
 
