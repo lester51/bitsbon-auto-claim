@@ -1,7 +1,6 @@
 class Server {
     async startServer() {
-        const colors = require('colors');
-        const path = require('path');
+        const colors = require('colors'); 
         const express = require('express');
         const run = require('./src/run');
         const port = process.env.PORT || 3000;

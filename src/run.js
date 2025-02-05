@@ -1,10 +1,11 @@
+const colors = require('colors');
+const path = require('path');
 const {
     displayHeader,
     accinfo,
     login,
     spin
 } = require('./index');
-const port = process.env.PORT || 3000;
 require('dotenv').config({
     path: path.resolve(__dirname, '../.env')
 });
