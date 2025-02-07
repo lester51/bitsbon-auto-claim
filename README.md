@@ -40,6 +40,7 @@ Script to automatically roll and claim coins every 10 minutes.
      cp .env.example .env
      ```
    - Edit the `.env` file and replace test values with your actual credentials or tokens
+   - You can get `API_KEY` here in [Scrapingbee](https://app.scrapingbee.com/account/login)
    - Optionally, you can change the `PORT` if you want the server to run on a different port
 
 ## Usage

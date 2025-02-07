@@ -19,7 +19,7 @@ async function headlessBrowser(url,cookie) {
         url: url,
         params: {
     	    'render_js': 'true',
-    	    'wait': '28000',
+    	    'wait': '30000',
     	    'json_response': 'true',
     	    'screenshot': 'true',
             'screenshot_full_page': 'true',
@@ -59,7 +59,7 @@ async function gemini(imgb64) {
                         {
                             inlineData: {
                                 mimeType: "image/jpeg",
-                                data: imgb64 // Replace with your actual base64 data
+                                data: imgb64
                             }
                         }, {
                             text: "This image has a captcha at the center. which of those 5 items are not same? solve it and give me the index (0-4) of the answer starts. no need to explain just the answer."
@@ -113,7 +113,7 @@ async function login(uname, pass) {
             username: uname,
             password: pass,
             pin: '',
-            remember: 'off',
+            remember: 'on',
             response: false
         }), {
             headers: {
@@ -240,6 +240,7 @@ async function ptcAds(cookies) {
         return matches ? matches.map(match => match.slice(1, -1).trim()).join(' ') : '';
     }
     catch(e) {
+        //console.log(e)
         return {
  	        error: 'Something happened while making the request. Please try again.'
  	    }
