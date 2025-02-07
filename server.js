@@ -7,11 +7,10 @@ class Server {
             displayHeader,
             accinfo,
             login,
+            ptcAds,
             spin
         } = require('./src/index');
-        require('dotenv').config({
-            path: path.resolve(__dirname, './.env')
-        });
+        require('dotenv').config();
         const username = process.env.USERNAME;
         const password = process.env.PASSWORD;
         const port = process.env.PORT || 3000;
@@ -39,7 +38,7 @@ class Server {
                 let cookies = await login(username, password);
                 let resp = await spin(cookies);
                 if (typeof resp.message === 'undefined') throw new Error("Please wait until the timer runs out and try again later.");
-                console.log(colors.info.bold("[ SCRIPT ] ")+colors.info(resp.message))
+                console.log(colors.info.bold("[ SPIN ] ")+colors.info(resp.message))
                 await accinfo(cookies, true);
             }
             catch(e) {
@@ -56,6 +55,15 @@ class Server {
                 await delay(600000);
             }
         }
+        
+        async function runPtcViewer() {
+            while (true) {
+                let cookies = await login(username, password);
+                let res1 = await ptcAds(cookies);
+                console.log(colors.info.bold("[ PTC ADS ]")+colors.info(res1))
+                await accinfo(cookies, true)
+            }
+        }
 
         app.get('/', (req, res) => {
             res.send('SERVER FOR BITBON FAUCET - AUTO FARM SCRIPT\nMADE\nBY\nHackMeSenpai(HMS)')
@@ -67,6 +75,7 @@ class Server {
             let cookies = await login(username, password);
             await accinfo(cookies);
             runEveryTenMinutes();
+            runPtcViewer();
         });
     }
 }
