@@ -75,7 +75,10 @@ class Server {
             let cookies = await login(username, password);
             await accinfo(cookies);
             runEveryTenMinutes();
+            /*
+            CURRENTLY THIS FUNC. IS DISABLED DUE TO API PROBLEMS
             runPtcViewer();
+            */
         });
     }
 }
